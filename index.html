@@ -1,16 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dashboard</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Momentom App</title>
   </head>
   <body>
-    <div id="login-form">
-      <input type="text" placeholder="What is your name?" />
-      <button>Log in</button>
+    <!-- 로그아웃 버튼 -->
+    <button id="logout-btn" class="hidden">로그아웃</button>
+
+    <!-- 날씨 및 위치 -->
+    <div id="weather">
+      <span id="weather-text"></span>
+      <span id="city-text"></span>
     </div>
+
+    <!-- 시계 & 날짜 -->
+    <div id="clock-container">
+      <h2 id="clock">00:00:00</h2>
+      <h3 id="date-display">0000년 00월 00일 일요일</h3>
+    </div>
+
+    <!-- 로그인 -->
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="이름을 입력하세요"
+      />
+      <button type="submit">로그인</button>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+
+    <div id="todo-container" class="hidden">
+      <!--  바로가기  -->
+      <div id="shortcut-container">
+        <a
+          href="https://naver.com"
+          target="_blank"
+          class="shortcut-item icon-naver"
+          title="네이버로 이동"
+          >N</a
+        >
+        <a
+          href="https://google.com"
+          target="_blank"
+          class="shortcut-item icon-google"
+          title="구글로 이동"
+          >G</a
+        >
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          class="shortcut-item icon-youtube"
+          title="유튜브로 이동"
+          >Y</a
+        >
+      </div>
+
+      <!-- 투두리스트 -->
+      <form id="todo-form">
+        <input required type="text" placeholder="할 일을 입력하세요" />
+        <button type="submit" id="todo-add-btn">추가</button>
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
